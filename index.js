@@ -20,19 +20,7 @@ app.get("/private", (req, res) => {
     if (!req.cookies.token) {
         return res.redirect(`/login?originurl=${req.query.originurl}`);
     }
-    res.redirect(req.query.originurl);
-});
-
-app.get("/", (req, res) => {
-    console.log('/ request received with params: ', req.query);
-    console.log('/ request received with headers: ', req.headers);
-    console.log('/ request received with headers: ', req);
-    return res.redirect(`/private?originurl=${req.query.originurl}`);
-});
-
-app.get("/sample.pac", (req, res) => {
-    console.log('request received with params: ', req.query);
-    return res.sendFile(path.join(__dirname, 'sample.pac'));
+    return res.redirect(req.query.originurl);
 });
 
 app.listen(3001, () => {
