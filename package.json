@@ -1,0 +1,13 @@
+{
+  "name": "zscaler-simulator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bala_com_home.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
