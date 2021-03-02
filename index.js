@@ -9,7 +9,7 @@ app.get("/login", (req, res) => {
     if (!req.cookies.token) {
         return res
         .set("Access-Control-Allow-Credentials", "true")
-        .cookie('token', 'encryptedstring', { httpOnly: true })
+        .cookie('token', 'encryptedstring', { httpOnly: true, maxAge: 30 * 24 * 60 * 60 * 1000 })
         .sendFile(path.join(__dirname, 'index.html'));
     }
     return res.redirect(req.query.originurl);
